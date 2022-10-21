@@ -1,5 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+// interface postsStateProps {
+//     id: string
+//     title: string
+//     content: string
+// }
+
 const initialState = [
     {
         id: '1',
@@ -15,5 +21,9 @@ const postsSlice = createSlice({
 
     }
 });
+
+export const selectAllPosts = (state: any) => {
+    return state.posts;
+};
 
 export default postsSlice.reducer
