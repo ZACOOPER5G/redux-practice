@@ -21,9 +21,20 @@ export const AddPostForm = () => {
                     type="text"
                     id="postTitle"
                     name="postTitle"
-                    value="title"
+                    placeholder="Title..."
+                    value={title}
                     onChange={onTitleChanged}
                 />
+                <label htmlFor="postContent" >Post Content:</label>
+                <input 
+                    type="text"
+                    id="postContent"
+                    name="postContent"
+                    placeholder="Content..."
+                    value={content}
+                    onChange={onContentChanged}
+                />
+                <button type="button" >Save Post</button>
             </form>
         </section>
     )
