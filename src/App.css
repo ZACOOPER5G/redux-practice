@@ -18,6 +18,10 @@ button {
   min-width: 20px;
 }
 
+button:hover {
+  border: solid 1px black;
+}
+
 button:active {
   background: whitesmoke;
   color: black;
