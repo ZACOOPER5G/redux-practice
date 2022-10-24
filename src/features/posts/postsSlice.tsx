@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, nanoid } from '@reduxjs/toolkit'
 
 // interface postsStateProps {
 //     id: string
@@ -14,12 +14,24 @@ const initialState = [
     }
 ];
 
-const postsSlice = createSlice({
+const postsSlice: any = createSlice({
     name: 'posts',
     initialState,
     reducers: {
-        postAdded(state, action) {
-            state.push(action.payload)
+        postAdded: {
+            reducer (state, action) {
+                state.push(action.payload)
+            },
+            // @ts-expect-error
+            prepare (title: any, content: any) {
+                return {
+                    payload: {
+                        id: nanoid(),
+                        title,
+                        content
+                    }
+                }
+            }
         }
     }
 });
