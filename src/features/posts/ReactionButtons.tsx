@@ -25,6 +25,6 @@ export const ReactionButtons = (props: any) => {
     })
 
     return (
-        <div>ReactionButtons</div>
+        <span>{reactionButtons}</span>
     )
 };
