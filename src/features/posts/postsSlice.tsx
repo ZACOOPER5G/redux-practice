@@ -23,12 +23,13 @@ const postsSlice: any = createSlice({
                 state.push(action.payload)
             },
             // @ts-expect-error
-            prepare (title: any, content: any) {
+            prepare (title: any, content: any, userId: any) {
                 return {
                     payload: {
                         id: nanoid(),
                         title,
-                        content
+                        content,
+                        userId,
                     }
                 }
             }
